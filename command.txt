@@ -1,3 +1,7 @@
 streamlit run app.py
 
 https://audio-sentiment-analyzer.streamlit.app/
+
+code command: streamlit run app.py --server.enableCORS false --server.enableXsrfProtection false
+
+pipenv install pytorch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 -c pytorch
