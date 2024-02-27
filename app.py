@@ -5,6 +5,8 @@ import speech_recognition as sr
 from transformers import pipeline
 from utils import convert_to_pcm_wav
 
+os.environ['TOKENIZERS_PARALLELISM'] = 'false'
+
 st.set_page_config(layout="wide")
 st.title("🎧 Audio Analysis 📝")
 st.write("[zendus](https://huggingface.co/Johnmicheal)")
@@ -14,7 +16,7 @@ st.sidebar.write("The Audio Analysis app is a powerful tool that allows you to a
 
 
 st.sidebar.header("Upload Audio")
-audio_file = st.sidebar.file_uploader("Browse", type=["wav"])
+audio_file = st.sidebar.file_uploader("Browse", type=["wav", "mp3"])
 upload_button = st.sidebar.button("Upload")
 
     
@@ -38,6 +40,7 @@ def transcribe_audio(audio_file):
 
 
 def main():
+   global audio_file, upload_button
    if audio_file and upload_button:
             try:
                 audio_file = convert_to_pcm_wav(audio_file)
@@ -74,6 +77,9 @@ def main():
                 st.error("Error occurred during audio transcription and sentiment analysis.")
                 st.error(str(e))
                 traceback.print_exc()
+
+            finally:
+                os.remove(audio_file)
 
 
 
