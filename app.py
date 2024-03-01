@@ -43,7 +43,7 @@ def main():
    global audio_file, upload_button
    if audio_file and upload_button:
             try:
-                audio_file = convert_to_pcm_wav(audio_file)
+                # audio_file = convert_to_pcm_wav(audio_file)
                 transcribed_text = transcribe_audio(audio_file)
                 sentiment_label, sentiment_score = perform_sentiment_analysis(transcribed_text)
                 st.header("Transcribed Text")
@@ -78,8 +78,8 @@ def main():
                 st.error(str(e))
                 traceback.print_exc()
 
-            finally:
-                os.remove(audio_file)
+            # finally:
+            #     os.remove(audio_file)
 
 
 
