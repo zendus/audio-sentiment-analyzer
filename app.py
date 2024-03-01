@@ -8,8 +8,8 @@ from utils import convert_to_pcm_wav
 os.environ['TOKENIZERS_PARALLELISM'] = 'false'
 
 st.set_page_config(layout="wide")
-st.title("🎧 Audio Analysis 📝")
-st.write("[zendus](https://huggingface.co/Johnmicheal)")
+st.title("🎧 Audio Sentiment Analyzer 📝")
+st.write("[Amara Onyeji](https://www.linkedin.com/in/amara-onyeji-046a23165/)")
 
 st.sidebar.title("Audio Analysis")
 st.sidebar.write("The Audio Analysis app is a powerful tool that allows you to analyze audio files and gain valuable insights from them. It combines speech recognition and sentiment analysis techniques to transcribe the audio and determine the sentiment expressed within it.")
