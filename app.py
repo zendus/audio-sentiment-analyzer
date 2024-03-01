@@ -78,8 +78,8 @@ def main():
                 st.error(str(e))
                 traceback.print_exc()
 
-            # finally:
-            #     os.remove(audio_file)
+            finally:
+                os.remove(audio_file)
 
 
 
